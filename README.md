@@ -80,7 +80,8 @@ pip install -r requirements.txt
 ```
 
 **Credentials are optional.** Without them the notebook replays our recorded GoPilot missions from `results/`.
-To fly the missions live, fill in `creds.env` at the repo root (or set the same names as environment variables):
+To fly the missions live, copy `creds.env.example` to `creds.env` at the repo root and fill it in (git ignores
+`creds.env`), or set the same names as environment variables. Judges receive the values with the submission:
 
 | Variable | What it is |
 |---|---|
@@ -96,7 +97,7 @@ jupyter lab notebooks/GoPilot_813.ipynb
 
 Then **Run → Restart Kernel and Run All Cells**.
 - **Replay** (no credentials): about 2 minutes. Each mission replays its recorded run in about 20 s.
-- **Live** (`creds.env` filled): the methane mission takes a few minutes, and the others 1–3 minutes each.
+- **Live** (`creds.env` filled in): the methane mission takes a few minutes, and the others 1–3 minutes each.
 - **Final output:** for each mission, a console of what GoPilot did, a postcard of the result, and an interactive
   map.
 - **Change the request:** edit the prompt in any mission cell. Name a facility, a date and a small box.
