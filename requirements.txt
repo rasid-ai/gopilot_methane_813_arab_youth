@@ -1,0 +1,14 @@
+# Python 3.11. Install with: pip install -r requirements.txt
+boto3==1.43.37
+botocore==1.43.37
+rasterio==1.4.3
+numpy==2.1.2
+matplotlib==3.10.7
+pillow==12.3.0
+requests==2.34.2
+folium==0.20.0
+branca==0.8.2
+markdown==3.10.3
+ipython==8.37.0
+ipykernel==7.1.0
+jupyterlab==4.2.5

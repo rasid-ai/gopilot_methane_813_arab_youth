@@ -1,0 +1,37 @@
+{
+  "site": {
+    "name": "UTGA gas treatment facility, Tabankourt, Algeria",
+    "lon": 7.62,
+    "lat": 28.64
+  },
+  "bbox": [
+    7.5995,
+    28.622,
+    7.6405,
+    28.658
+  ],
+  "resolution_m": 20,
+  "bands": [
+    "B02",
+    "B03",
+    "B04",
+    "B11",
+    "B12"
+  ],
+  "scenes": {
+    "target": {
+      "scene_id": "S2B_32RLS_20240103_0_L2A",
+      "l1c_scene_id": "S2B_32RLS_20240103_0_L1C",
+      "date": "2024-01-03",
+      "cloud_cover": 0.003291,
+      "file": "S2B_32RLS_20240103_0_L2A_tabankourt_4km.tif"
+    },
+    "reference": {
+      "scene_id": "S2A_32RLS_20231229_0_L2A",
+      "l1c_scene_id": "S2A_32RLS_20231229_0_L1C",
+      "date": "2023-12-29",
+      "cloud_cover": 0.002862,
+      "file": "S2A_32RLS_20231229_0_L2A_tabankourt_4km.tif"
+    }
+  }
+}
