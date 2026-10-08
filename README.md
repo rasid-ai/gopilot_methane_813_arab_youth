@@ -104,7 +104,14 @@ Then **Run → Restart Kernel and Run All Cells**.
   with every signed download link replaced by a local file.
 - **Colab:** upload the notebook. Its first cell clones this repo.
 
-`notebooks/reference/GoPilot_Methane_813_reference.ipynb` is the long first version, with a full live run saved.
+The notebook's cells only fly missions. The code behind them is in `src/gopilot813/`:
+
+| File | What it holds |
+|---|---|
+| `config.py` | finds the repo, reads credentials, chooses live or replay |
+| `console.py` | the GoPilot client, recording and replay, and the mission console |
+| `maps.py` | the postcard and the interactive map, styled with GoPilot's own layer styles |
+| `physics.py` | the raw B12/B11 signal on the sample input |
 
 ## 8. Example input and output
 
