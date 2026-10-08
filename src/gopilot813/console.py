@@ -19,6 +19,7 @@ _TOKENS = re.compile(r"<(input|output|cache_read|cache_write|total)_tokens>(\d+)
 _FINAL = re.compile(r"<final>(.*?)(?:</final>|$)", re.S)
 _THINK = re.compile(r"<think(?:_final)?>(.*?)(?:</think(?:_final)?>|(?=<tool|<final>)|$)", re.S)
 _META = re.compile(r"```file-meta\s*(\{.*?\})\s*```", re.S)
+_SIGNED = re.compile(r"https?://[^\s\"'<>)\]]+X-Amz-[^\s\"'<>)\]]*")   # any presigned URL, anywhere
 _LINK = re.compile(r"\[([^\]]+)\]\(((?:https?://|files/)[^)\s]+)\)")   # signed links, or a recording's files
 
 # What each tool is, as a quest. Anything not listed shows its own name.
@@ -289,7 +290,10 @@ class GoPilot:
                 last_draw, last_len = now, len(run.raw)
         run.t1 = time.time()
         if rec_dir is not None:
-            _save_recording(run, events, rec_dir)
+            try:
+                _save_recording(run, events, rec_dir)
+            except Exception as e:                  # a recording problem must never cost the mission its result
+                print(f"⚠️ Recording not saved: {type(e).__name__}: {e}")
 
     def _replay(self, run, handle, rec_dir):
         stream = rec_dir / "stream.jsonl" if rec_dir else None
@@ -315,6 +319,9 @@ def _save_recording(run, events, rec_dir):
     """Keep a live run for replay: the stream with every signed link swapped for a local file, and the files."""
     import requests
     files_dir = rec_dir / "files"
+    if files_dir.exists():                      # a re-recording replaces the old one whole
+        for old in files_dir.iterdir():
+            old.unlink()
     files_dir.mkdir(parents=True, exist_ok=True)
     local = {}
     for name, url in run.files.items():
@@ -322,12 +329,20 @@ def _save_recording(run, events, rec_dir):
         if len(data) <= 25_000_000:                     # layers only, never whole scenes
             (files_dir / name).write_bytes(data)
             local[url] = f"files/{name}"
-    clean = lambda text: _LINK.sub(lambda m: f"[{m.group(1)}]({local.get(m.group(2), 'files/' + m.group(1))})", text)
+    def clean(text):
+        # Markdown download links become the local file; any other signed URL (file-meta's usage ledger,
+        # say) becomes its file name, or a marker. No signature leaves this function.
+        text = _LINK.sub(lambda m: f"[{m.group(1)}]({local.get(m.group(2), 'files/' + m.group(1))})", text)
+        def unsign(m):
+            name = m.group(0).split("?", 1)[0].rsplit("/", 1)[-1]
+            return f"files/{name}" if (files_dir / name).exists() else "signed-link-removed"
+        return _SIGNED.sub(unsign, text)
+
     chunks = [(t, clean(c)) for t, c in events]
-    if any("X-Amz" in c or "amazonaws.com" in c for _, c in chunks):   # a link split across chunks: merge the answer
-        k = next(i for i, (_, c) in enumerate(chunks) if "<final>" in c)
+    if any("X-Amz" in c for _, c in chunks):    # a signed URL split across chunks: merge from the answer on
+        k = next((i for i, (_, c) in enumerate(chunks) if "<final>" in c), 0)
         chunks = chunks[:k] + [(chunks[-1][0], clean("".join(c for _, c in events[k:])))]
-    assert not any("X-Amz" in c for _, c in chunks), "a signed link survived; recording not saved"
+    assert not any("X-Amz" in c for _, c in chunks), "a signed link survived"
     with open(rec_dir / "stream.jsonl", "w") as f:
         for t, c in chunks:
             f.write(json.dumps({"t": round(t, 2), "d": c}, ensure_ascii=False) + "\n")

@@ -1,0 +1,27 @@
+{
+ "prompt": "Delineate the farm fields in this 6 \u00d7 6 km box near Wadi Ad-Dawasir, Saudi Arabia: bbox [44.700, 20.420, 44.760, 20.480]. Use one clear (under 5 % cloud) Sentinel-2 L2A scene from February 2025 as a B04-B03-B02 RGB at 10 m, run the field delineation model at 5 m, and present the fields.",
+ "recorded_utc": "2026-10-08T17:09:50Z",
+ "seconds": 103.7,
+ "tools": [
+  "pre_order_tools",
+  "load_tools",
+  "sentinel2_search_goserver",
+  "sentinel2_fetch_goserver",
+  "delineate_fields_goserver",
+  "raster_to_png_goserver",
+  "present_files",
+  "signal_end"
+ ],
+ "tokens": {
+  "input": 18,
+  "output": 2212,
+  "cache_read": 102527,
+  "cache_write": 17219,
+  "total": 121976
+ },
+ "files": [
+  "wadi_dawasir_fields-eafdba01.geojson",
+  "wadi_dawasir_rgb_20250208.tif",
+  "wadi_dawasir_rgb_preview.png"
+ ]
+}

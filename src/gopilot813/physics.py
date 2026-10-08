@@ -1,5 +1,6 @@
 """The textbook methane signal by hand, on the committed sample input: why a trained model is needed."""
 
+import io
 import json
 
 import matplotlib.pyplot as plt
@@ -30,5 +31,9 @@ def physics():
     for a in ax:
         a.axis("off")
     plt.tight_layout()
-    plt.show()
+    buf = io.BytesIO()                          # JPEG keeps the saved notebook light
+    fig.savefig(buf, format="jpg", facecolor=fig.get_facecolor(), pil_kwargs={"quality": 88})
+    plt.close(fig)
+    from IPython.display import Image, display
+    display(Image(buf.getvalue(), format="jpeg"))
     return frac

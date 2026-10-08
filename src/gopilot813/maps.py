@@ -152,9 +152,9 @@ def _to_wgs84(gj):
 def _rings(geom):
     t, c = geom.get("type"), geom.get("coordinates", [])
     if t == "Polygon":
-        return [c[0]]
+        return [c[0]] if c and c[0] else []
     if t == "MultiPolygon":
-        return [p[0] for p in c]
+        return [p[0] for p in c if p and p[0]]
     if t == "Point":
         return [[c]]
     if t in ("MultiPoint", "LineString"):
@@ -175,13 +175,16 @@ def _load(run, max_px):
             if low.endswith(_RASTER_EXT):
                 layers.append((name, "raster", _raster(data, meta, max_px), meta))
             elif low.endswith(_VECTOR_EXT):
-                layers.append((name, "vector", _to_wgs84(json.loads(data)), meta))
+                gj = _to_wgs84(json.loads(data))
+                # A model can emit a degenerate polygon with no coordinates; it has nothing to draw.
+                gj["features"] = [f for f in gj.get("features", []) if _rings(f.get("geometry") or {})]
+                layers.append((name, "vector", gj, meta))
         except Exception as e:
             print(f"⚠️ {name}: not drawn ({type(e).__name__})")
     return layers
 
 
-def _extent(layers):
+def _extent(layers, min_span=3000.0):
     xs, ys = [], []
     for _, kind, p, _ in layers:
         if kind == "raster":
@@ -193,20 +196,28 @@ def _extent(layers):
                         x, y = _merc(lon, lat); xs.append(x); ys.append(y)
     if not xs:
         return None
-    pad = max(max(xs) - min(xs), max(ys) - min(ys), 600) * 0.12
-    return min(xs) - pad, min(ys) - pad, max(xs) + pad, max(ys) + pad
+    # At least min_span metres across: a 50 m plume needs its facility around it, and the basemap
+    # service has no imagery finer than that in many deserts.
+    pad = max(max(xs) - min(xs), max(ys) - min(ys)) * 0.12
+    l, b, r, t = min(xs) - pad, min(ys) - pad, max(xs) + pad, max(ys) + pad
+    cx, cy, half = (l + r) / 2, (b + t) / 2, min_span / 2
+    return min(l, cx - half), min(b, cy - half), max(r, cx + half), max(t, cy + half)
 
 
 def _basemap(ext, px=1400):
     l, b, r, t = ext
     w = px if (r - l) >= (t - b) else int(px * (r - l) / (t - b))
     h = int(w * (t - b) / (r - l))
-    try:
-        res = requests.get(ESRI_EXPORT, timeout=60, params={
-            "bbox": f"{l},{b},{r},{t}", "bboxSR": 3857, "imageSR": 3857, "size": f"{w},{h}", "format": "jpg", "f": "image"})
-        return np.asarray(Image.open(io.BytesIO(res.content)).convert("RGB"))
-    except Exception:
-        return None
+    for scale in (1.0, 0.5):                    # the export service sometimes refuses the larger size
+        try:
+            res = requests.get(ESRI_EXPORT, timeout=60, params={
+                "bbox": f"{l},{b},{r},{t}", "bboxSR": 3857, "imageSR": 3857,
+                "size": f"{int(w * scale)},{int(h * scale)}", "format": "jpg", "f": "image"})
+            if res.ok and res.headers.get("content-type", "").startswith("image"):
+                return np.asarray(Image.open(io.BytesIO(res.content)).convert("RGB"))
+        except Exception:
+            pass
+    return None
 
 
 def postcard(run, layers, title):
@@ -238,16 +249,22 @@ def postcard(run, layers, title):
                         ax.plot(*zip(*pts), "o", color=color, ms=4, zorder=3)
             if polys:
                 ax.add_collection(PatchCollection(polys, facecolor=color, edgecolor="white", linewidth=0.8, alpha=0.65, zorder=2))
+                # A feature too small to see at this scale gets a locator ring, so a 50 m plume still stands out.
+                span = max(r - l, t - b)
+                for poly in polys:
+                    xy = poly.get_xy()
+                    if max(np.ptp(xy[:, 0]), np.ptp(xy[:, 1])) < 0.06 * span and len(polys) <= 20:
+                        ax.add_patch(plt.Circle(xy.mean(0), 0.05 * span, fill=False, ec="#ffcc4d", lw=2.2, zorder=4))
             legend.append((name, color, len(p.get("features", []))))
     ax.set_xlim(l, r); ax.set_ylim(b, t); ax.set_axis_off()
     ax.set_title(title, color="#ffcc4d", fontsize=14, family="monospace", loc="left", pad=10)
     txt = "   ".join(f"■ {n.rsplit('-', 1)[0]} ({c} features)" for n, _, c in legend) or "   ".join(n for n, *_ in layers)
     fig.text(0.01, 0.01, txt[:150], color="#cfe9ff", fontsize=9, family="monospace")
     fig.text(0.99, 0.01, "Imagery © Esri, Maxar · Contains modified Copernicus Sentinel data", color="#5b7aa6", fontsize=7, ha="right")
-    buf = io.BytesIO()
-    fig.savefig(buf, format="png", bbox_inches="tight", facecolor=fig.get_facecolor())
+    buf = io.BytesIO()                          # JPEG: a photo basemap is 2 MB as PNG, a few hundred KB as JPEG
+    fig.savefig(buf, format="jpg", bbox_inches="tight", facecolor=fig.get_facecolor(), pil_kwargs={"quality": 85})
     plt.close(fig)
-    return _Image(buf.getvalue())
+    return _Image(buf.getvalue(), format="jpeg")
 
 
 def interactive_map(layers):
