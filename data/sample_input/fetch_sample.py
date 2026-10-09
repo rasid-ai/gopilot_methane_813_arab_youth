@@ -1,5 +1,6 @@
-"""Fetch the sample input: a 4 x 4 km clip of the UTGA Tabankourt gas facility, Algeria, from public
-Sentinel-2 L2A Cloud-Optimised GeoTIFFs (Element84 Earth Search, AWS Open Data). No account needed.
+"""Fetch the sample input: a 4 x 4 km clip of a large oil-and-gas methane plume in Kazakhstan
+(UNEP IMEO MARS source KAZ_S_185, ~288,000 kg/h on 2026-07-30), from public Sentinel-2 L2A
+Cloud-Optimised GeoTIFFs (Element84 Earth Search, AWS Open Data). No account needed.
 
     python data/sample_input/fetch_sample.py
 
@@ -17,10 +18,10 @@ from rasterio.warp import transform_bounds
 from rasterio.windows import from_bounds
 
 HERE = Path(__file__).parent
-SITE = {"name": "UTGA gas treatment facility, Tabankourt, Algeria", "lon": 7.62, "lat": 28.64}
-BBOX = [7.5995, 28.622, 7.6405, 28.658]                     # about 4 x 4 km around the site
-SCENES = {"target": "S2B_32RLS_20240103_0_L2A",             # the plume date, 0 % cloud
-          "reference": "S2A_32RLS_20231229_0_L2A"}          # a clean date 5 days before
+SITE = {"name": "Oil & gas methane plume, Kazakhstan (UNEP IMEO MARS KAZ_S_185)", "lon": 53.864, "lat": 47.284}
+BBOX = [53.8374, 47.266, 53.8906, 47.302]                   # about 4 x 4 km framing the plume
+SCENES = {"target": "S2A_39TYN_20260730_1_L2A",             # the plume date (~288,000 kg/h)
+          "reference": "S2C_39TYN_20260728_0_L2A"}          # a clean date 2 days before, 0 % cloud
 ASSETS = {"B02": "blue", "B03": "green", "B04": "red", "B11": "swir16", "B12": "swir22"}
 STAC = "https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/"
 
@@ -39,7 +40,7 @@ def clip(item_id):
                 profile = dict(driver="GTiff", crs=src.crs, width=w, height=h, count=len(ASSETS), dtype="uint16",
                                transform=t * t.scale(win.width / w, win.height / h), compress="deflate")
     h, w = min(b.shape[0] for b in bands), min(b.shape[1] for b in bands)
-    out = HERE / f"{item_id}_tabankourt_4km.tif"
+    out = HERE / f"{item_id}_kaz_4km.tif"
     profile.update(height=h, width=w)
     with rasterio.open(out, "w", **profile) as dst:
         for i, (name, b) in enumerate(zip(ASSETS, bands), 1):

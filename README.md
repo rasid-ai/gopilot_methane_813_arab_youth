@@ -10,10 +10,10 @@ physically simulated plumes, and returns the plume as map layers.
 
 This repository is a reproducible proof of concept. One notebook flies four missions through GoPilot and shows
 the results on maps:
-- methane at the UTGA gas plant, Tabankourt, Algeria;
+- methane over an oil-and-gas area in central Bahrain;
 - date palms in the Al-Ahsa oasis;
 - solar panels in Dubai;
-- farm fields at Wadi Ad-Dawasir.
+- farm fields in the Val d'Orcia, Tuscany.
 
 <img src="docs/img/gopilot_overview.png" width="900" alt="GoPilot in one picture">
 
@@ -40,9 +40,10 @@ missing is a model that reads the signal reliably, and a way for a non-specialis
 
 | Product | Provider | Dates | Processing level | Licence |
 |---|---|---|---|---|
-| Sentinel-2 MSI (methane mission) | ESA Copernicus, via Element84 Earth Search (AWS Open Data) | target 2024-01-03, references Nov to Dec 2023 | **L1C** (what MethaneMapper uses) | Free, full and open; *contains modified Copernicus Sentinel data 2023–2024* |
-| Sentinel-2 MSI (sample input, field mission) | same | 2023-12-29, 2024-01-03; Feb 2025 | **L2A** | same |
+| Sentinel-2 MSI (methane mission) | ESA Copernicus, via Element84 Earth Search (AWS Open Data) | target 2026-07-22, two clean references within the 60 days before | **L1C** (what MethaneMapper uses) | Free, full and open; *contains modified Copernicus Sentinel data* |
+| Sentinel-2 MSI (physics sample input) | same | 2026-07-28 and 2026-07-30 (a large methane plume in Kazakhstan) | **L2A** (public) | same |
 | Mapbox Satellite (palm and solar missions) | Mapbox, Maxar | most recent mosaic | RGB, about 30 cm | © Mapbox © Maxar, used through GoPilot |
+| Google Satellite (field mission) | Google, Maxar et al. | most recent mosaic | RGB, ~2.4 m at zoom 16 | © Google, used through GoPilot |
 | Esri World Imagery (basemaps only) | Esri | current | RGB tiles | Esri terms, attribution on every map |
 
 Hyperspectral data is **not** used in this PoC. MethaneMapper's physics carries over to hyperspectral sensors such
@@ -117,8 +118,9 @@ The notebook's cells only fly missions. The code behind them is in `src/gopilot8
 ## 8. Example input and output
 
 **Input:** one sentence. The sample of the area GoPilot works on is in `data/sample_input/`: two 4 × 4 km
-Sentinel-2 clips of the Tabankourt facility, and `scenes.json` with the exact scene IDs, dates and box.
-`python data/sample_input/fetch_sample.py` recreates them from the public archive.
+Sentinel-2 clips of a large methane plume in Kazakhstan (UNEP IMEO MARS source KAZ_S_185), and `scenes.json`
+with the exact scene IDs, dates and box. `python data/sample_input/fetch_sample.py` recreates them from the
+public archive.
 
 **Output:** in `results/<mission>/`: the recorded stream, the layers GoPilot returned (`files/`) and `meta.json`.
 
@@ -129,9 +131,9 @@ Sentinel-2 clips of the Tabankourt facility, and `scenes.json` with the exact sc
 **Limitations:**
 - Sentinel-2's 20 m SWIR sees large point sources: roughly hundreds of kg/h and up, depending on surface and sun.
   Small leaks are below it.
-- Bright, dark or wet surfaces and sharp edges can mimic the B12/B11 signal. The notebook's physics cell shows this
-  on the sample input: the dry riverbed lights up. Clean reference dates and the trained model reduce false
-  alarms, but do not remove them.
+- Bright, dark or wet surfaces and sharp edges can mimic the B12/B11 signal. The notebook's physics cell shows the
+  raw signal on the sample input: a ~288,000 kg/h plume stands out clearly, but ordinary surface changes can produce
+  the same B12/B11 drop. Clean reference dates and the trained model reduce false alarms, but do not remove them.
 - A plume is only seen on a clear overpass, about every 5 days.
 - GoPilot is an agent: between runs it can choose different reference dates. The recorded runs are the ones shown.
 - **Next:** the same physics on hyperspectral sensors (EnMAP, Tanager, Satellite 813). Hundreds of narrow bands
@@ -145,7 +147,7 @@ Sentinel-2 clips of the Tabankourt facility, and `scenes.json` with the exact sc
 **Licence:** the code in this repository is MIT (see `LICENSE`). GoPilot, GoServer and MethaneMapper are RASID
 proprietary and are used here as a service.
 
-**Attribution:** contains modified Copernicus Sentinel data (2023–2025), processed by ESA and accessed through
+**Attribution:** contains modified Copernicus Sentinel data (2021–2026), processed by ESA and accessed through
 Element84 Earth Search on AWS Open Data. Basemaps © Esri, Maxar, Earthstar Geographics. VHR imagery © Mapbox
 © Maxar. MethaneMapper: A. Ghandour (CNRS-L), H. Nasrallah (RASID), with C. Nattero, N. Ginatta and A. Pescino
 (FusionAILabs).
