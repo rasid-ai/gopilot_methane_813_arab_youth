@@ -1,109 +1,219 @@
-{"t": 5.88, "d": "<think>\n"}
-{"t": 5.88, "d": "My"}
-{"t": 5.92, "d": " plan is"}
-{"t": 6.03, "d": " to loc"}
-{"t": 6.03, "d": "ate the A"}
-{"t": 6.12, "d": "OI as"}
-{"t": 6.12, "d": " a 4x4km"}
-{"t": 6.17, "d": " box, search"}
-{"t": 6.22, "d": " Sentinel-2 for"}
-{"t": 6.33, "d": " the target date pl"}
-{"t": 6.33, "d": "us cl"}
-{"t": 6.33, "d": "ean reference dates within the"}
-{"t": 6.42, "d": " pr"}
-{"t": 6.42, "d": "ior 60 days fil"}
-{"t": 6.47, "d": "tering under"}
-{"t": 6.57, "d": " 10% cloud cover"}
-{"t": 6.57, "d": ", f"}
-{"t": 6.67, "d": "etch L"}
-{"t": 6.67, "d": "1C"}
-{"t": 6.77, "d": " all"}
-{"t": 6.77, "d": " bands for two"}
-{"t": 6.77, "d": " references"}
-{"t": 6.83, "d": " and the target scene"}
-{"t": 6.88, "d": ", then run pl"}
-{"t": 6.95, "d": "ume detection on"}
-{"t": 6.95, "d": " the results"}
-{"t": 6.95, "d": ".\n\n"}
-{"t": 6.95, "d": "\n</think>\n"}
-{"t": 8.51, "d": "<tool id=\"0\" status=\"processing\">pre_order_tools</tool>\n"}
-{"t": 8.51, "d": "<tool id=\"0\" status=\"done\">pre_order_tools</tool>\n"}
-{"t": 10.88, "d": "<tool id=\"1\" status=\"processing\">load_tools</tool>\n"}
-{"t": 10.88, "d": "<tool id=\"1\" status=\"done\">load_tools</tool>\n"}
-{"t": 12.93, "d": "<tool id=\"2\" status=\"processing\">locate_point</tool>\n"}
-{"t": 13.97, "d": "<tool id=\"2\" status=\"done\">locate_point</tool>\n"}
-{"t": 15.46, "d": "<tool id=\"3\" status=\"processing\">sentinel2_search_goserver</tool>\n"}
-{"t": 15.46, "d": "<tool id=\"3\" status=\"done\">sentinel2_search_goserver</tool>\n"}
-{"t": 23.46, "d": "<tool id=\"4\" status=\"processing\">sentinel2_search_goserver</tool>\n"}
-{"t": 25.44, "d": "<tool id=\"4\" status=\"done\">sentinel2_search_goserver</tool>\n"}
-{"t": 27.49, "d": "<tool id=\"5\" status=\"processing\">sentinel2_fetch_goserver</tool>\n"}
-{"t": 27.49, "d": "<tool id=\"5\" status=\"done\">sentinel2_fetch_goserver</tool>\n"}
-{"t": 28.6, "d": "<tool id=\"6\" status=\"processing\">sentinel2_fetch_goserver</tool>\n"}
-{"t": 28.6, "d": "<tool id=\"6\" status=\"done\">sentinel2_fetch_goserver</tool>\n"}
-{"t": 45.3, "d": "<tool id=\"7\" status=\"processing\">sentinel2_fetch_goserver</tool>\n"}
-{"t": 60.25, "d": "<beat>\"alive\"</beat>\n"}
-{"t": 75.16, "d": "<beat>\"alive\"</beat>\n"}
-{"t": 89.97, "d": "<beat>\"alive\"</beat>\n"}
-{"t": 90.67, "d": "<tool id=\"7\" status=\"done\">sentinel2_fetch_goserver</tool>\n"}
-{"t": 107.36, "d": "<tool id=\"8\" status=\"processing\">detect_methane_plumes_goserver</tool>\n"}
-{"t": 110.02, "d": "<beat>\"alive\"</beat>\n"}
-{"t": 110.02, "d": "<tool id=\"8\" status=\"done\">detect_methane_plumes_goserver</tool>\n"}
-{"t": 110.02, "d": "<think>\n"}
-{"t": 110.02, "d": "I"}
-{"t": 110.02, "d": " need to check"}
-{"t": 110.02, "d": " the ge"}
-{"t": 110.02, "d": "ojson file"}
-{"t": 110.02, "d": " to get the pl"}
-{"t": 110.02, "d": "ume's size"}
-{"t": 110.02, "d": " and area, so I'll in"}
-{"t": 110.08, "d": "spect its"}
-{"t": 110.11, "d": " contents or use"}
-{"t": 110.11, "d": " geo"}
-{"t": 110.11, "d": " tools to calculate that"}
-{"t": 110.11, "d": ".\n\n"}
-{"t": 110.11, "d": "\n</think>\n"}
-{"t": 113.71, "d": "<tool id=\"9\" status=\"processing\">load_tools</tool>\n"}
-{"t": 113.71, "d": "<tool id=\"9\" status=\"done\">load_tools</tool>\n"}
-{"t": 113.71, "d": "<think>\n"}
-{"t": 113.71, "d": "I"}
-{"t": 113.73, "d": " should"}
-{"t": 113.78, "d": " look for the"}
-{"t": 113.78, "d": " right area"}
-{"t": 113.88, "d": " cal"}
-{"t": 114.0, "d": "culation tool within"}
-{"t": 114.0, "d": " the geo"}
-{"t": 114.0, "d": " domain.\n\n"}
-{"t": 114.0, "d": "\n</think>\n"}
-{"t": 115.34, "d": "<tool id=\"10\" status=\"processing\">inspect_file</tool>\n"}
-{"t": 115.35, "d": "<tool id=\"10\" status=\"done\">inspect_file</tool>\n"}
-{"t": 118.31, "d": "<tool id=\"11\" status=\"processing\">catalog_tools</tool>\n"}
-{"t": 118.31, "d": "<tool id=\"11\" status=\"done\">catalog_tools</tool>\n"}
-{"t": 118.31, "d": "<think>\n"}
-{"t": 118.31, "d": "I"}
-{"t": 118.31, "d": " should"}
-{"t": 118.32, "d": " use the add"}
-{"t": 118.32, "d": "_"}
-{"t": 118.34, "d": "area_column"}
-{"t": 118.45, "d": "_go"}
-{"t": 118.45, "d": "ser"}
-{"t": 118.45, "d": "ver t"}
-{"t": 118.5, "d": "ool to cal"}
-{"t": 118.55, "d": "culate the pol"}
-{"t": 118.57, "d": "ygon's area in square meters"}
-{"t": 118.57, "d": " or hectares.\n\n"}
-{"t": 118.57, "d": "\n</think>\n"}
-{"t": 119.98, "d": "<tool id=\"12\" status=\"processing\">load_tools</tool>\n"}
-{"t": 119.98, "d": "<tool id=\"12\" status=\"done\">load_tools</tool>\n"}
-{"t": 137.62, "d": "<tool id=\"13\" status=\"processing\">add_area_column_goserver</tool>\n"}
-{"t": 137.62, "d": "<tool id=\"13\" status=\"done\">add_area_column_goserver</tool>\n"}
-{"t": 140.12, "d": "<tool id=\"14\" status=\"processing\">present_files</tool>\n"}
-{"t": 140.13, "d": "<tool id=\"14\" status=\"done\">present_files</tool>\n"}
-{"t": 141.35, "d": "<tool id=\"15\" status=\"processing\">signal_end</tool>\n"}
-{"t": 149.83, "d": "<tool id=\"15\" status=\"done\">signal_end</tool>\n"}
-{"t": 150.16, "d": "<final>\nNow searching for the target scene (3 Jan 2024) and references within 60 days before (4 Nov 2023 – 3 Jan 2024), under 10% cloud.Target: S2B_32RLS_20240103_0_L1C (0% cloud). References selected (closest clean, 0% cloud): S2A_32RLS_20231229_0_L1C (29 Dec 2023) and S2A_32RLS_20231226_0_L1C (26 Dec 2023). Now fetch all three at 20 m, full bands.Now running MethaneMapper with references first, target last.## Methane Plume Detection — UTGA Gas Treatment Facility, Tabankourt, Algeria\n\n**AOI:** 4×4 km box centred on 28.64°N, 7.62°E (bbox: 7.5995–7.6405°E, 28.6219–28.6581°N)\n\n**Scenes used (Sentinel-2 L1C, 20 m, all bands):**\n\n| Role | Scene ID | Date | Cloud cover |\n|---|---|---|---|\n| Reference 1 | S2A_32RLS_20231229_0_L1C | 2023-12-29 | 0% |\n| Reference 2 | S2A_32RLS_20231226_0_L1C | 2023-12-26 | 0% |\n| Target | S2B_32RLS_20240103_0_L1C | 2024-01-03 | 0% |\n\nAll three were acquired within an 8-day window and 0% cloud, satisfying the <10% clean-reference requirement.\n\n**MethaneMapper result:**\n\n| Plume | Class | Area |\n|---|---|---|\n| 1 | Class1 | 160,502 m² ≈ 0.161 km² ≈ 16.1 ha |\n\n- 1 plume polygon detected, centred near **7.6098°E, 28.6366°N**, directly over the facility footprint — consistent with a short-range vapor/enhanced-signal source rather than an atmospheric artifact.\n- Bounding extent of the plume: ~7.6066–7.6161°E, 28.6353–28.6380°N (≈1 km east-west extent).\n\n**Caveats:** Sentinel-2-based methane detection (SWIR band-ratio method) is sensitive to surface albedo changes, haze and sun-glint, and cannot be independently validated against ground-truth concentration (ppm·m) without a dedicated hyperspectral/TROPOMI cross-check. Treat this as a candidate detection warranting follow-up with higher-cadence or point-source sensors (e.g., Sentinel-5P, GHGSat) before attribution.\n\nFile delivered: `tabankourt_methane_plumes_area.geojson` (plume polygon with area_m2 attribute).\n\n### ⬇️ Download\n\n- [tabankourt_methane_plumes_area.geojson](files/tabankourt_methane_plumes_area.geojson)</final>"}
-{"t": 150.16, "d": "\n<input_tokens>26</input_tokens>\n"}
-{"t": 150.16, "d": "\n<output_tokens>3901</output_tokens>\n"}
-{"t": 150.16, "d": "\n<cache_read_tokens>234783</cache_read_tokens>\n"}
-{"t": 150.16, "d": "\n<cache_write_tokens>18962</cache_write_tokens>\n"}
-{"t": 150.16, "d": "\n<total_tokens>257672</total_tokens>\n"}
-{"t": 150.16, "d": "\n```file-meta\n{\n  \"tabankourt_methane_plumes_area.geojson\": {\n    \"visualization\": true,\n    \"sld\": \"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?><StyledLayerDescriptor xmlns=\\\"http://www.opengis.net/sld\\\" xmlns:se=\\\"http://www.opengis.net/se\\\" xmlns:ogc=\\\"http://www.opengis.net/ogc\\\" xmlns:xlink=\\\"http://www.w3.org/1999/xlink\\\" xmlns:xsi=\\\"http://www.w3.org/2001/XMLSchema-instance\\\" version=\\\"1.1.0\\\"><NamedLayer><se:Name>tabankourt_utga_methane-38e9c7a1.geojson</se:Name><UserStyle><se:Name>tabankourt_utga_methane-38e9c7a1.geojson</se:Name><se:FeatureTypeStyle><se:Rule><se:Name>Single symbol</se:Name><se:PolygonSymbolizer><se:Fill><se:SvgParameter name=\\\"fill\\\">#02462C</se:SvgParameter></se:Fill><se:Stroke><se:SvgParameter name=\\\"stroke\\\">#232323</se:SvgParameter><se:SvgParameter name=\\\"stroke-width\\\">1</se:SvgParameter><se:SvgParameter name=\\\"stroke-linejoin\\\">bevel</se:SvgParameter></se:Stroke></se:PolygonSymbolizer></se:Rule></se:FeatureTypeStyle></UserStyle></NamedLayer></StyledLayerDescriptor>\"\n  },\n  \"hardware_usage.json\": {\n    \"visualization\": false,\n    \"s3_url\": \"s3://rasid-gopilotv1-storage/assets/user_aysh-813-review/session_aysh813-7451b5c173d7431cb09fd995eda7942b/meta/hardware_usage.json\",\n    \"download_url\": \"signed-link-removed\"\n  }\n}\n```"}
+{"t": 5.84, "d": "<think>\n"}
+{"t": 5.84, "d": "I"}
+{"t": 5.9, "d": "'ll loc"}
+{"t": 5.94, "d": "ate the point"}
+{"t": 6.03, "d": " of interest, search"}
+{"t": 6.03, "d": " Sentinel-2 for"}
+{"t": 6.08, "d": " the"}
+{"t": 6.19, "d": " target date and re"}
+{"t": 6.19, "d": "ference sc"}
+{"t": 6.43, "d": "en"}
+{"t": 6.44, "d": "es, f"}
+{"t": 6.44, "d": "etch L"}
+{"t": 6.44, "d": "1C"}
+{"t": 6.44, "d": " data"}
+{"t": 6.44, "d": " with"}
+{"t": 6.49, "d": " all bands for the three sc"}
+{"t": 6.52, "d": "enes, then run meth"}
+{"t": 6.53, "d": "ane plume detection.\n\n"}
+{"t": 6.53, "d": "\n</think>\n"}
+{"t": 9.19, "d": "<tool id=\"0\" status=\"processing\">pre_order_tools</tool>\n"}
+{"t": 9.19, "d": "<tool id=\"0\" status=\"done\">pre_order_tools</tool>\n"}
+{"t": 12.38, "d": "<tool id=\"1\" status=\"processing\">load_tools</tool>\n"}
+{"t": 12.38, "d": "<tool id=\"1\" status=\"done\">load_tools</tool>\n"}
+{"t": 12.48, "d": "<think>\n"}
+{"t": 12.48, "d": "Next"}
+{"t": 12.48, "d": " I"}
+{"t": 12.58, "d": "'ll use loc"}
+{"t": 12.63, "d": "ate_point to get the A"}
+{"t": 12.68, "d": "OI bounding box, then"}
+{"t": 12.73, "d": " search for both target and re"}
+{"t": 12.73, "d": "ference scenes sim"}
+{"t": 12.73, "d": "ultaneously.\n\n"}
+{"t": 12.73, "d": "\n</think>\n"}
+{"t": 12.74, "d": "<tool id=\"2\" status=\"processing\">locate_point</tool>\n"}
+{"t": 12.74, "d": "<tool id=\"2\" status=\"done\">locate_point</tool>\n"}
+{"t": 25.23, "d": "<tool id=\"3\" status=\"processing\">sentinel2_search_goserver</tool>\n"}
+{"t": 25.24, "d": "<tool id=\"3\" status=\"done\">sentinel2_search_goserver</tool>\n"}
+{"t": 25.24, "d": "<think>\n"}
+{"t": 25.29, "d": "With"}
+{"t": 25.29, "d": " a"}
+{"t": 25.37, "d": " target date of "}
+{"t": 25.37, "d": "2026"}
+{"t": 25.43, "d": "-07-22, I need two"}
+{"t": 25.48, "d": " reference scen"}
+{"t": 25.59, "d": "es within ro"}
+{"t": 25.59, "d": "ughly "}
+{"t": 25.63, "d": "60-90 days before it"}
+{"t": 25.68, "d": ", spread ap"}
+{"t": 25.68, "d": "art for"}
+{"t": 25.78, "d": " di"}
+{"t": 25.78, "d": "versity r"}
+{"t": 25.82, "d": "ather than clustered close"}
+{"t": 25.88, "d": " together. I'll settle on"}
+{"t": 25.93, "d": " something"}
+{"t": 25.99, "d": " like 2026-07-17"}
+{"t": 26.08, "d": " and 2026-06-"}
+{"t": 26.08, "d": "22 as re"}
+{"t": 26.14, "d": "asonable spa"}
+{"t": 26.14, "d": "ced-"}
+{"t": 27.04, "d": "out pic"}
+{"t": 27.04, "d": "ks.\n\n"}
+{"t": 27.07, "d": "Now I'll f"}
+{"t": 27.12, "d": "etch all"}
+{"t": 27.21, "d": " three scenes with full b"}
+{"t": 27.21, "d": "ands at 20m"}
+{"t": 27.22, "d": " resolution using the bb"}
+{"t": 27.22, "d": "ox.\n\n"}
+{"t": 27.24, "d": "\n</think>\n"}
+{"t": 27.24, "d": "<tool id=\"4\" status=\"processing\">sentinel2_fetch_goserver</tool>\n"}
+{"t": 27.24, "d": "<tool id=\"4\" status=\"done\">sentinel2_fetch_goserver</tool>\n"}
+{"t": 28.37, "d": "<tool id=\"5\" status=\"processing\">sentinel2_fetch_goserver</tool>\n"}
+{"t": 28.37, "d": "<tool id=\"5\" status=\"done\">sentinel2_fetch_goserver</tool>\n"}
+{"t": 44.69, "d": "<tool id=\"6\" status=\"processing\">sentinel2_fetch_goserver</tool>\n"}
+{"t": 59.71, "d": "<beat>\"alive\"</beat>\n"}
+{"t": 74.72, "d": "<beat>\"alive\"</beat>\n"}
+{"t": 89.81, "d": "<beat>\"alive\"</beat>\n"}
+{"t": 97.85, "d": "<beat>\"alive\"</beat>\n"}
+{"t": 98.66, "d": "<tool id=\"6\" status=\"done\">sentinel2_fetch_goserver</tool>\n"}
+{"t": 115.62, "d": "<tool id=\"7\" status=\"processing\">detect_methane_plumes_goserver</tool>\n"}
+{"t": 118.44, "d": "<beat>\"alive\"</beat>\n"}
+{"t": 118.44, "d": "<tool id=\"7\" status=\"done\">detect_methane_plumes_goserver</tool>\n"}
+{"t": 118.44, "d": "<think>\n"}
+{"t": 118.44, "d": "I"}
+{"t": 118.49, "d": " need the"}
+{"t": 118.49, "d": " pl"}
+{"t": 118.59, "d": "ume"}
+{"t": 118.59, "d": " pol"}
+{"t": 118.69, "d": "ygon details—"}
+{"t": 118.74, "d": "sizes and the"}
+{"t": 118.74, "d": " MBM"}
+{"t": 119.14, "d": "P"}
+{"t": 119.14, "d": "/S"}
+{"t": 119.14, "d": "B"}
+{"t": 119.15, "d": "MP/M"}
+{"t": 119.15, "d": "B"}
+{"t": 119.15, "d": "SP"}
+{"t": 119.15, "d": " index"}
+{"t": 119.15, "d": " values—so I should inspect"}
+{"t": 119.2, "d": " the geojson output"}
+{"t": 119.24, "d": " file directly."}
+{"t": 119.24, "d": " The"}
+{"t": 119.34, "d": " det"}
+{"t": 119.34, "d": "ect"}
+{"t": 119.34, "d": "_"}
+{"t": 119.44, "d": "methane_plumes tool"}
+{"t": 119.49, "d": " may"}
+{"t": 119.59, "d": " not expose those ind"}
+{"t": 119.59, "d": "ices in"}
+{"t": 119.65, "d": " its output proper"}
+{"t": 119.69, "d": "ties, so I might"}
+{"t": 119.75, "d": " need a"}
+{"t": 119.75, "d": " separate cal"}
+{"t": 120.52, "d": "culation step to get them.\n\n"}
+{"t": 120.52, "d": "\n</think>\n"}
+{"t": 120.53, "d": "<tool id=\"8\" status=\"processing\">list_tools</tool>\n"}
+{"t": 120.53, "d": "<tool id=\"8\" status=\"done\">list_tools</tool>\n"}
+{"t": 122.05, "d": "<tool id=\"9\" status=\"processing\">load_tools</tool>\n"}
+{"t": 122.8, "d": "<tool id=\"9\" status=\"done\">load_tools</tool>\n"}
+{"t": 123.16, "d": "<tool id=\"10\" status=\"processing\">load_tools</tool>\n"}
+{"t": 123.16, "d": "<tool id=\"10\" status=\"done\">load_tools</tool>\n"}
+{"t": 131.34, "d": "<tool id=\"11\" status=\"processing\">inspect_file</tool>\n"}
+{"t": 131.34, "d": "<tool id=\"11\" status=\"done\">inspect_file</tool>\n"}
+{"t": 131.39, "d": "<think>\n"}
+{"t": 131.39, "d": "Of"}
+{"t": 131.44, "d": " the two det"}
+{"t": 131.54, "d": "ected plume"}
+{"t": 131.54, "d": " features, one is"}
+{"t": 131.59, "d": " just"}
+{"t": 131.64, "d": " a degenerate point-"}
+{"t": 131.69, "d": "like artifact with ess"}
+{"t": 131.79, "d": "entially zero area, so I"}
+{"t": 131.79, "d": " can"}
+{"t": 131.84, "d": " discard it"}
+{"t": 131.94, "d": " as noise. The real"}
+{"t": 131.94, "d": " one sp"}
+{"t": 132.04, "d": "ans ro"}
+{"t": 132.04, "d": "ughly 0.0"}
+{"t": 132.09, "d": "054° by 0.004"}
+{"t": 132.14, "d": "° in lon"}
+{"t": 132.14, "d": "/lat, and"}
+{"t": 132.19, "d": " I need to conv"}
+{"t": 132.3, "d": "ert that"}
+{"t": 132.3, "d": " to act"}
+{"t": 132.41, "d": "ual area"}
+{"t": 132.41, "d": " in m"}
+{"t": 132.44, "d": "²/"}
+{"t": 132.44, "d": "ha, so I should"}
+{"t": 132.58, "d": " check if there's a local get"}
+{"t": 132.58, "d": "_area tool to"}
+{"t": 132.58, "d": " compute it proper"}
+{"t": 132.59, "d": "ly.\n\n"}
+{"t": 132.59, "d": "\n</think>\n"}
+{"t": 138.74, "d": "<tool id=\"12\" status=\"processing\">load_tools</tool>\n"}
+{"t": 138.74, "d": "<tool id=\"12\" status=\"done\">load_tools</tool>\n"}
+{"t": 138.74, "d": "<think>\n"}
+{"t": 138.74, "d": "I"}
+{"t": 138.84, "d": " should"}
+{"t": 138.84, "d": " use"}
+{"t": 138.96, "d": " get"}
+{"t": 138.96, "d": "_"}
+{"t": 139.03, "d": "area with the file par"}
+{"t": 139.16, "d": "ameter pointing to the ge"}
+{"t": 139.16, "d": "ojson to comp"}
+{"t": 139.21, "d": "ute the actual pl"}
+{"t": 139.21, "d": "ume"}
+{"t": 139.24, "d": " pol"}
+{"t": 139.42, "d": "ygon area, though"}
+{"t": 139.42, "d": " I'm un"}
+{"t": 139.42, "d": "sure if it returns area"}
+{"t": 139.44, "d": " per"}
+{"t": 139.44, "d": " feature or for"}
+{"t": 139.44, "d": " the whole file.\n\n"}
+{"t": 139.44, "d": "\n</think>\n"}
+{"t": 140.55, "d": "<tool id=\"13\" status=\"processing\">get_area</tool>\n"}
+{"t": 140.55, "d": "<tool id=\"13\" status=\"done\">get_area</tool>\n"}
+{"t": 142.75, "d": "<tool id=\"14\" status=\"processing\">calculate_methane_index_goserver</tool>\n"}
+{"t": 142.75, "d": "<tool id=\"14\" status=\"done\">calculate_methane_index_goserver</tool>\n"}
+{"t": 144.54, "d": "<tool id=\"15\" status=\"processing\">calculate_methane_index_goserver</tool>\n"}
+{"t": 144.55, "d": "<tool id=\"15\" status=\"done\">calculate_methane_index_goserver</tool>\n"}
+{"t": 154.55, "d": "<tool id=\"16\" status=\"processing\">calculate_methane_index_goserver</tool>\n"}
+{"t": 154.55, "d": "<tool id=\"16\" status=\"done\">calculate_methane_index_goserver</tool>\n"}
+{"t": 154.59, "d": "<think>\n"}
+{"t": 154.59, "d": "The"}
+{"t": 154.59, "d": " comb"}
+{"t": 154.64, "d": "ined area"}
+{"t": 154.64, "d": " of 8"}
+{"t": 154.79, "d": ".58 "}
+{"t": 154.79, "d": "ha is"}
+{"t": 154.85, "d": " lik"}
+{"t": 154.96, "d": "ely dominated by one"}
+{"t": 154.96, "d": " real"}
+{"t": 154.99, "d": " feature, since"}
+{"t": 155.04, "d": " the other appears deg"}
+{"t": 155.04, "d": "enerate with"}
+{"t": 155.04, "d": " near-zero area"}
+{"t": 155.19, "d": ","}
+{"t": 155.19, "d": " prob"}
+{"t": 155.25, "d": "ably a point artifact. I"}
+{"t": 155.3, "d": "'ll report the total"}
+{"t": 155.36, "d": " det"}
+{"t": 155.4, "d": "ected area while noting this ca"}
+{"t": 155.44, "d": "veat, and present the pl"}
+{"t": 155.44, "d": "ume"}
+{"t": 155.55, "d": " geojson along"}
+{"t": 155.58, "d": " with the three index tif"}
+{"t": 155.58, "d": "s as the final out"}
+{"t": 156.51, "d": "puts.\n\n"}
+{"t": 156.51, "d": "\n</think>\n"}
+{"t": 156.56, "d": "<tool id=\"17\" status=\"processing\">present_files</tool>\n"}
+{"t": 156.56, "d": "<tool id=\"17\" status=\"done\">present_files</tool>\n"}
+{"t": 157.91, "d": "<tool id=\"18\" status=\"processing\">signal_end</tool>\n"}
+{"t": 167.69, "d": "<tool id=\"18\" status=\"done\">signal_end</tool>\n"}
+{"t": 167.69, "d": "<final>\nNow running MethaneMapper detection.There's a `calculate_methane_index_goserver` tool. Let's load it and inspect the plume geojson in parallel.## Methane plume check — Central Bahrain oil & gas site (26.0624°N, 50.5349°E)\n\n**AOI:** 4×4 km square, bbox [50.5169, 26.0444, 50.5529, 26.0804] (Sakhir area, Southern Governorate, Bahrain)\n\n**Scenes used (Sentinel-2 L1C, 20 m, full-band):**\n| Role | Scene ID | Date | Cloud cover |\n|---|---|---|---|\n| Reference 1 | S2B_39RVJ_20260717_1_L1C | 2026-07-17 | 0% |\n| Reference 2 | S2B_39RVJ_20260707_1_L1C | 2026-07-07 | 0% |\n| Target | S2C_39RVJ_20260722_0_L1C | 2026-07-22 | 0% |\n\nBoth references fall within the 60-day pre-target window and are well under the 10% cloud limit.\n\n### MethaneMapper detection\n2 candidate plume polygons returned (class \"Class1\"):\n- Feature 0: a near-degenerate (essentially zero-area) polygon — likely a weak/noise detection, not a confirmed plume.\n- Feature 1: a real polygon, bbox 50.5354–50.5408°E, 26.0583–26.0623°N (~600 m × ~440 m footprint).\n\n**Combined mapped plume area: 8.58 ha (0.0858 km², ≈85,808 m²)** — dominated by Feature 1; Feature 0 contributes negligible area and should be treated as low-confidence.\n\n### Methane spectral indices (B11/B12, target 2026-07-22 vs. reference 2026-07-17)\n| Index | Definition | Min | Max | Mean | Std |\n|---|---|---|---|---|---|\n| MBMP | Difference of the two scenes' MBSPs | -0.0629 | 0.1187 | -0.0088 | 0.0059 |\n| SBMP | Per-band products averaged | -0.0884 | 0.2279 | 0.0642 | 0.0146 |\n| MBSP | Band ratio | -0.4551 | -0.1568 | -0.3025 | 0.0243 |\n\n**Interpretation:** MBMP mean is slightly negative with a max positive outlier (0.119) — consistent with a localized SWIR absorption anomaly over the detected polygon rather than a widespread enhancement across the AOI. The MethaneMapper model flagged one spatially coherent plume (~8.6 ha); confirm with field/operator data since Sentinel-2-based methane detection has known false-positive sensitivity to surface albedo and glint over industrial/bare-ground sites.\n\nFiles delivered: plume polygons (GeoJSON) and the three methane index GeoTIFFs (MBMP, SBMP, MBSP).\n\n### ⬇️ Download\n\n- [bahrain_central_oilgas_methane-0583dcfc.geojson](files/bahrain_central_oilgas_methane-0583dcfc.geojson)\n\n- [bahrain_mbmp.tif](files/bahrain_mbmp.tif)\n\n- [bahrain_sbmp.tif](files/bahrain_sbmp.tif)\n\n- [bahrain_mbsp.tif](files/bahrain_mbsp.tif)</final>"}
+{"t": 167.69, "d": "\n<input_tokens>22</input_tokens>\n"}
+{"t": 167.69, "d": "\n<output_tokens>5619</output_tokens>\n"}
+{"t": 167.69, "d": "\n<cache_read_tokens>179801</cache_read_tokens>\n"}
+{"t": 167.69, "d": "\n<cache_write_tokens>30583</cache_write_tokens>\n"}
+{"t": 167.78, "d": "\n<total_tokens>216025</total_tokens>\n"}
+{"t": 167.87, "d": "\n```file-meta\n{\n  \"bahrain_central_oilgas_methane-0583dcfc.geojson\": {\n    \"visualization\": true,\n    \"sld\": \"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?><StyledLayerDescriptor xmlns=\\\"http://www.opengis.net/sld\\\" xmlns:se=\\\"http://www.opengis.net/se\\\" xmlns:ogc=\\\"http://www.opengis.net/ogc\\\" xmlns:xlink=\\\"http://www.w3.org/1999/xlink\\\" xmlns:xsi=\\\"http://www.w3.org/2001/XMLSchema-instance\\\" version=\\\"1.1.0\\\"><NamedLayer><se:Name>bahrain_central_oilgas_methane-0583dcfc.geojson</se:Name><UserStyle><se:Name>bahrain_central_oilgas_methane-0583dcfc.geojson</se:Name><se:FeatureTypeStyle><se:Rule><se:Name>Single symbol</se:Name><se:PolygonSymbolizer><se:Fill><se:SvgParameter name=\\\"fill\\\">#02462C</se:SvgParameter></se:Fill><se:Stroke><se:SvgParameter name=\\\"stroke\\\">#232323</se:SvgParameter><se:SvgParameter name=\\\"stroke-width\\\">1</se:SvgParameter><se:SvgParameter name=\\\"stroke-linejoin\\\">bevel</se:SvgParameter></se:Stroke></se:PolygonSymbolizer></se:Rule></se:FeatureTypeStyle></UserStyle></NamedLayer></StyledLayerDescriptor>\"\n  },\n  \"bahrain_mbmp.tif\": {\n    \"visualization\": true,\n    \"sld\": \"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?><StyledLayerDescriptor xmlns=\\\"http://www.opengis.net/sld\\\" xmlns:sld=\\\"http://www.opengis.net/sld\\\" xmlns:gml=\\\"http://www.opengis.net/gml\\\" xmlns:ogc=\\\"http://www.opengis.net/ogc\\\" version=\\\"1.0.0\\\"><UserLayer><sld:LayerFeatureConstraints><sld:FeatureTypeConstraint/></sld:LayerFeatureConstraints><sld:UserStyle><sld:Name>MBMP</sld:Name><sld:FeatureTypeStyle><sld:Rule><sld:RasterSymbolizer><sld:ChannelSelection><sld:GrayChannel><sld:SourceChannelName>1</sld:SourceChannelName></sld:GrayChannel></sld:ChannelSelection><sld:ColorMap type=\\\"ramp\\\"><sld:ColorMapEntry quantity=\\\"-0.062863\\\" color=\\\"#fff5f0\\\" label=\\\"-0.0629\\\"/><sld:ColorMapEntry quantity=\\\"-0.059980\\\" color=\\\"#fff2ec\\\" label=\\\"-0.0600\\\"/><sld:ColorMapEntry quantity=\\\"-0.057098\\\" color=\\\"#fff0e8\\\" label=\\\"-0.0571\\\"/><sld:ColorMapEntry quantity=\\\"-0.054215\\\" color=\\\"#ffede5\\\" label=\\\"-0.0542\\\"/><sld:ColorMapEntry quantity=\\\"-0.051332\\\" color=\\\"#feeae1\\\" label=\\\"-0.0513\\\"/><sld:ColorMapEntry quantity=\\\"-0.048449\\\" color=\\\"#fee8dd\\\" label=\\\"-0.0484\\\"/><sld:ColorMapEntry quantity=\\\"-0.045567\\\" color=\\\"#fee5d9\\\" label=\\\"-0.0456\\\"/><sld:ColorMapEntry quantity=\\\"-0.042684\\\" color=\\\"#fee3d6\\\" label=\\\"-0.0427\\\"/><sld:ColorMapEntry quantity=\\\"-0.039801\\\" color=\\\"#fee0d2\\\" label=\\\"-0.0398\\\"/><sld:ColorMapEntry quantity=\\\"-0.036918\\\" color=\\\"#fedbcc\\\" label=\\\"-0.0369\\\"/><sld:ColorMapEntry quantity=\\\"-0.034036\\\" color=\\\"#fdd7c6\\\" label=\\\"-0.0340\\\"/><sld:ColorMapEntry quantity=\\\"-0.031153\\\" color=\\\"#fdd2bf\\\" label=\\\"-0.0312\\\"/><sld:ColorMapEntry quantity=\\\"-0.028270\\\" color=\\\"#fdcdb9\\\" label=\\\"-0.0283\\\"/><sld:ColorMapEntry quantity=\\\"-0.025388\\\" color=\\\"#fdc9b3\\\" label=\\\"-0.0254\\\"/><sld:ColorMapEntry quantity=\\\"-0.022505\\\" color=\\\"#fcc4ad\\\" label=\\\"-0.0225\\\"/><sld:ColorMapEntry quantity=\\\"-0.019622\\\" color=\\\"#fcbfa7\\\" label=\\\"-0.0196\\\"/><sld:ColorMapEntry quantity=\\\"-0.016739\\\" color=\\\"#fcb99f\\\" label=\\\"-0.0167\\\"/><sld:ColorMapEntry quantity=\\\"-0.013857\\\" color=\\\"#fcb499\\\" label=\\\"-0.0139\\\"/><sld:ColorMapEntry quantity=\\\"-0.010974\\\" color=\\\"#fcaf93\\\" label=\\\"-0.0110\\\"/><sld:ColorMapEntry quantity=\\\"-0.008091\\\" color=\\\"#fcaa8d\\\" label=\\\"-0.0081\\\"/><sld:ColorMapEntry quantity=\\\"-0.005208\\\" color=\\\"#fca588\\\" label=\\\"-0.0052\\\"/><sld:ColorMapEntry quantity=\\\"-0.002326\\\" color=\\\"#fca082\\\" label=\\\"-0.0023\\\"/><sld:ColorMapEntry quantity=\\\"0.000557\\\" color=\\\"#fc9b7c\\\" label=\\\"0.0006\\\"/><sld:ColorMapEntry quantity=\\\"0.003440\\\" color=\\\"#fc9576\\\" label=\\\"0.0034\\\"/><sld:ColorMapEntry quantity=\\\"0.006323\\\" color=\\\"#fc9070\\\" label=\\\"0.0063\\\"/><sld:ColorMapEntry quantity=\\\"0.009205\\\" color=\\\"#fc8b6b\\\" label=\\\"0.0092\\\"/><sld:ColorMapEntry quantity=\\\"0.012088\\\" color=\\\"#fc8666\\\" label=\\\"0.0121\\\"/><sld:ColorMapEntry quantity=\\\"0.014971\\\" color=\\\"#fc8161\\\" label=\\\"0.0150\\\"/><sld:ColorMapEntry quantity=\\\"0.017853\\\" color=\\\"#fb7c5c\\\" label=\\\"0.0179\\\"/><sld:ColorMapEntry quantity=\\\"0.020736\\\" color=\\\"#fb7757\\\" label=\\\"0.0207\\\"/><sld:ColorMapEntry quantity=\\\"0.023619\\\" color=\\\"#fb7252\\\" label=\\\"0.0236\\\"/><sld:ColorMapEntry quantity=\\\"0.026502\\\" color=\\\"#fb6d4d\\\" label=\\\"0.0265\\\"/><sld:ColorMapEntry quantity=\\\"0.029384\\\" color=\\\"#fa6648\\\" label=\\\"0.0294\\\"/><sld:ColorMapEntry quantity=\\\"0.032267\\\" color=\\\"#f96044\\\" label=\\\"0.0323\\\"/><sld:ColorMapEntry quantity=\\\"0.035150\\\" color=\\\"#f75b40\\\" label=\\\"0.0351\\\"/><sld:ColorMapEntry quantity=\\\"0.038033\\\" color=\\\"#f6553c\\\" label=\\\"0.0380\\\"/><sld:ColorMapEntry quantity=\\\"0.040915\\\" color=\\\"#f44f39\\\" label=\\\"0.0409\\\"/><sld:ColorMapEntry quantity=\\\"0.043798\\\" color=\\\"#f34935\\\" label=\\\"0.0438\\\"/><sld:ColorMapEntry quantity=\\\"0.046681\\\" color=\\\"#f14331\\\" label=\\\"0.0467\\\"/><sld:ColorMapEntry quantity=\\\"0.049563\\\" color=\\\"#f03d2d\\\" label=\\\"0.0496\\\"/><sld:ColorMapEntry quantity=\\\"0.052446\\\" color=\\\"#ec382b\\\" label=\\\"0.0524\\\"/><sld:ColorMapEntry quantity=\\\"0.055329\\\" color=\\\"#e83429\\\" label=\\\"0.0553\\\"/><sld:ColorMapEntry quantity=\\\"0.058212\\\" color=\\\"#e32f27\\\" label=\\\"0.0582\\\"/><sld:ColorMapEntry quantity=\\\"0.061094\\\" color=\\\"#de2b25\\\" label=\\\"0.0611\\\"/><sld:ColorMapEntry quantity=\\\"0.063977\\\" color=\\\"#da2723\\\" label=\\\"0.0640\\\"/><sld:ColorMapEntry quantity=\\\"0.066860\\\" color=\\\"#d52221\\\" label=\\\"0.0669\\\"/><sld:ColorMapEntry quantity=\\\"0.069743\\\" color=\\\"#d11e1f\\\" label=\\\"0.0697\\\"/><sld:ColorMapEntry quantity=\\\"0.072625\\\" color=\\\"#cc191e\\\" label=\\\"0.0726\\\"/><sld:ColorMapEntry quantity=\\\"0.075508\\\" color=\\\"#c7171c\\\" label=\\\"0.0755\\\"/><sld:ColorMapEntry quantity=\\\"0.078391\\\" color=\\\"#c2161b\\\" label=\\\"0.0784\\\"/><sld:ColorMapEntry quantity=\\\"0.081274\\\" color=\\\"#bd151a\\\" label=\\\"0.0813\\\"/><sld:ColorMapEntry quantity=\\\"0.084156\\\" color=\\\"#b81419\\\" label=\\\"0.0842\\\"/><sld:ColorMapEntry quantity=\\\"0.087039\\\" color=\\\"#b31218\\\" label=\\\"0.0870\\\"/><sld:ColorMapEntry quantity=\\\"0.089922\\\" color=\\\"#af1117\\\" label=\\\"0.0899\\\"/><sld:ColorMapEntry quantity=\\\"0.092804\\\" color=\\\"#aa1016\\\" label=\\\"0.0928\\\"/><sld:ColorMapEntry quantity=\\\"0.095687\\\" color=\\\"#a50f15\\\" label=\\\"0.0957\\\"/><sld:ColorMapEntry quantity=\\\"0.098570\\\" color=\\\"#9d0d14\\\" label=\\\"0.0986\\\"/><sld:ColorMapEntry quantity=\\\"0.101453\\\" color=\\\"#960b13\\\" label=\\\"0.1015\\\"/><sld:ColorMapEntry quantity=\\\"0.104335\\\" color=\\\"#8e0912\\\" label=\\\"0.1043\\\"/><sld:ColorMapEntry quantity=\\\"0.107218\\\" color=\\\"#860811\\\" label=\\\"0.1072\\\"/><sld:ColorMapEntry quantity=\\\"0.110101\\\" color=\\\"#7e0610\\\" label=\\\"0.1101\\\"/><sld:ColorMapEntry quantity=\\\"0.112984\\\" color=\\\"#77040f\\\" label=\\\"0.1130\\\"/><sld:ColorMapEntry quantity=\\\"0.115866\\\" color=\\\"#6f020e\\\" label=\\\"0.1159\\\"/><sld:ColorMapEntry quantity=\\\"0.118749\\\" color=\\\"#67000d\\\" label=\\\"0.1187\\\"/></sld:ColorMap></sld:RasterSymbolizer></sld:Rule></sld:FeatureTypeStyle></sld:UserStyle></UserLayer></StyledLayerDescriptor>\",\n    \"zoom_levels\": \"0-13\"\n  },\n  \"bahrain_sbmp.tif\": {\n    \"visualization\": true,\n    \"sld\": \"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?><StyledLayerDescriptor xmlns=\\\"http://www.opengis.net/sld\\\" xmlns:sld=\\\"http://www.opengis.net/sld\\\" xmlns:gml=\\\"http://www.opengis.net/gml\\\" xmlns:ogc=\\\"http://www.opengis.net/ogc\\\" version=\\\"1.0.0\\\"><UserLayer><sld:LayerFeatureConstraints><sld:FeatureTypeConstraint/></sld:LayerFeatureConstraints><sld:UserStyle><sld:Name>SBMP</sld:Name><sld:FeatureTypeStyle><sld:Rule><sld:RasterSymbolizer><sld:ChannelSelection><sld:GrayChannel><sld:SourceChannelName>1</sld:SourceChannelName></sld:GrayChannel></sld:ChannelSelection><sld:ColorMap type=\\\"ramp\\\"><sld:ColorMapEntry quantity=\\\"-0.088355\\\" color=\\\"#fff5f0\\\" label=\\\"-0.0884\\\"/><sld:ColorMapEntry quantity=\\\"-0.083335\\\" color=\\\"#fff2ec\\\" label=\\\"-0.0833\\\"/><sld:ColorMapEntry quantity=\\\"-0.078314\\\" color=\\\"#fff0e8\\\" label=\\\"-0.0783\\\"/><sld:ColorMapEntry quantity=\\\"-0.073294\\\" color=\\\"#ffede5\\\" label=\\\"-0.0733\\\"/><sld:ColorMapEntry quantity=\\\"-0.068273\\\" color=\\\"#feeae1\\\" label=\\\"-0.0683\\\"/><sld:ColorMapEntry quantity=\\\"-0.063253\\\" color=\\\"#fee8dd\\\" label=\\\"-0.0633\\\"/><sld:ColorMapEntry quantity=\\\"-0.058232\\\" color=\\\"#fee5d9\\\" label=\\\"-0.0582\\\"/><sld:ColorMapEntry quantity=\\\"-0.053212\\\" color=\\\"#fee3d6\\\" label=\\\"-0.0532\\\"/><sld:ColorMapEntry quantity=\\\"-0.048192\\\" color=\\\"#fee0d2\\\" label=\\\"-0.0482\\\"/><sld:ColorMapEntry quantity=\\\"-0.043171\\\" color=\\\"#fedbcc\\\" label=\\\"-0.0432\\\"/><sld:ColorMapEntry quantity=\\\"-0.038151\\\" color=\\\"#fdd7c6\\\" label=\\\"-0.0382\\\"/><sld:ColorMapEntry quantity=\\\"-0.033130\\\" color=\\\"#fdd2bf\\\" label=\\\"-0.0331\\\"/><sld:ColorMapEntry quantity=\\\"-0.028110\\\" color=\\\"#fdcdb9\\\" label=\\\"-0.0281\\\"/><sld:ColorMapEntry quantity=\\\"-0.023089\\\" color=\\\"#fdc9b3\\\" label=\\\"-0.0231\\\"/><sld:ColorMapEntry quantity=\\\"-0.018069\\\" color=\\\"#fcc4ad\\\" label=\\\"-0.0181\\\"/><sld:ColorMapEntry quantity=\\\"-0.013049\\\" color=\\\"#fcbfa7\\\" label=\\\"-0.0130\\\"/><sld:ColorMapEntry quantity=\\\"-0.008028\\\" color=\\\"#fcb99f\\\" label=\\\"-0.0080\\\"/><sld:ColorMapEntry quantity=\\\"-0.003008\\\" color=\\\"#fcb499\\\" label=\\\"-0.0030\\\"/><sld:ColorMapEntry quantity=\\\"0.002013\\\" color=\\\"#fcaf93\\\" label=\\\"0.0020\\\"/><sld:ColorMapEntry quantity=\\\"0.007033\\\" color=\\\"#fcaa8d\\\" label=\\\"0.0070\\\"/><sld:ColorMapEntry quantity=\\\"0.012054\\\" color=\\\"#fca588\\\" label=\\\"0.0121\\\"/><sld:ColorMapEntry quantity=\\\"0.017074\\\" color=\\\"#fca082\\\" label=\\\"0.0171\\\"/><sld:ColorMapEntry quantity=\\\"0.022094\\\" color=\\\"#fc9b7c\\\" label=\\\"0.0221\\\"/><sld:ColorMapEntry quantity=\\\"0.027115\\\" color=\\\"#fc9576\\\" label=\\\"0.0271\\\"/><sld:ColorMapEntry quantity=\\\"0.032135\\\" color=\\\"#fc9070\\\" label=\\\"0.0321\\\"/><sld:ColorMapEntry quantity=\\\"0.037156\\\" color=\\\"#fc8b6b\\\" label=\\\"0.0372\\\"/><sld:ColorMapEntry quantity=\\\"0.042176\\\" color=\\\"#fc8666\\\" label=\\\"0.0422\\\"/><sld:ColorMapEntry quantity=\\\"0.047197\\\" color=\\\"#fc8161\\\" label=\\\"0.0472\\\"/><sld:ColorMapEntry quantity=\\\"0.052217\\\" color=\\\"#fb7c5c\\\" label=\\\"0.0522\\\"/><sld:ColorMapEntry quantity=\\\"0.057237\\\" color=\\\"#fb7757\\\" label=\\\"0.0572\\\"/><sld:ColorMapEntry quantity=\\\"0.062258\\\" color=\\\"#fb7252\\\" label=\\\"0.0623\\\"/><sld:ColorMapEntry quantity=\\\"0.067278\\\" color=\\\"#fb6d4d\\\" label=\\\"0.0673\\\"/><sld:ColorMapEntry quantity=\\\"0.072299\\\" color=\\\"#fa6648\\\" label=\\\"0.0723\\\"/><sld:ColorMapEntry quantity=\\\"0.077319\\\" color=\\\"#f96044\\\" label=\\\"0.0773\\\"/><sld:ColorMapEntry quantity=\\\"0.082340\\\" color=\\\"#f75b40\\\" label=\\\"0.0823\\\"/><sld:ColorMapEntry quantity=\\\"0.087360\\\" color=\\\"#f6553c\\\" label=\\\"0.0874\\\"/><sld:ColorMapEntry quantity=\\\"0.092380\\\" color=\\\"#f44f39\\\" label=\\\"0.0924\\\"/><sld:ColorMapEntry quantity=\\\"0.097401\\\" color=\\\"#f34935\\\" label=\\\"0.0974\\\"/><sld:ColorMapEntry quantity=\\\"0.102421\\\" color=\\\"#f14331\\\" label=\\\"0.1024\\\"/><sld:ColorMapEntry quantity=\\\"0.107442\\\" color=\\\"#f03d2d\\\" label=\\\"0.1074\\\"/><sld:ColorMapEntry quantity=\\\"0.112462\\\" color=\\\"#ec382b\\\" label=\\\"0.1125\\\"/><sld:ColorMapEntry quantity=\\\"0.117483\\\" color=\\\"#e83429\\\" label=\\\"0.1175\\\"/><sld:ColorMapEntry quantity=\\\"0.122503\\\" color=\\\"#e32f27\\\" label=\\\"0.1225\\\"/><sld:ColorMapEntry quantity=\\\"0.127523\\\" color=\\\"#de2b25\\\" label=\\\"0.1275\\\"/><sld:ColorMapEntry quantity=\\\"0.132544\\\" color=\\\"#da2723\\\" label=\\\"0.1325\\\"/><sld:ColorMapEntry quantity=\\\"0.137564\\\" color=\\\"#d52221\\\" label=\\\"0.1376\\\"/><sld:ColorMapEntry quantity=\\\"0.142585\\\" color=\\\"#d11e1f\\\" label=\\\"0.1426\\\"/><sld:ColorMapEntry quantity=\\\"0.147605\\\" color=\\\"#cc191e\\\" label=\\\"0.1476\\\"/><sld:ColorMapEntry quantity=\\\"0.152626\\\" color=\\\"#c7171c\\\" label=\\\"0.1526\\\"/><sld:ColorMapEntry quantity=\\\"0.157646\\\" color=\\\"#c2161b\\\" label=\\\"0.1576\\\"/><sld:ColorMapEntry quantity=\\\"0.162666\\\" color=\\\"#bd151a\\\" label=\\\"0.1627\\\"/><sld:ColorMapEntry quantity=\\\"0.167687\\\" color=\\\"#b81419\\\" label=\\\"0.1677\\\"/><sld:ColorMapEntry quantity=\\\"0.172707\\\" color=\\\"#b31218\\\" label=\\\"0.1727\\\"/><sld:ColorMapEntry quantity=\\\"0.177728\\\" color=\\\"#af1117\\\" label=\\\"0.1777\\\"/><sld:ColorMapEntry quantity=\\\"0.182748\\\" color=\\\"#aa1016\\\" label=\\\"0.1827\\\"/><sld:ColorMapEntry quantity=\\\"0.187769\\\" color=\\\"#a50f15\\\" label=\\\"0.1878\\\"/><sld:ColorMapEntry quantity=\\\"0.192789\\\" color=\\\"#9d0d14\\\" label=\\\"0.1928\\\"/><sld:ColorMapEntry quantity=\\\"0.197809\\\" color=\\\"#960b13\\\" label=\\\"0.1978\\\"/><sld:ColorMapEntry quantity=\\\"0.202830\\\" color=\\\"#8e0912\\\" label=\\\"0.2028\\\"/><sld:ColorMapEntry quantity=\\\"0.207850\\\" color=\\\"#860811\\\" label=\\\"0.2079\\\"/><sld:ColorMapEntry quantity=\\\"0.212871\\\" color=\\\"#7e0610\\\" label=\\\"0.2129\\\"/><sld:ColorMapEntry quantity=\\\"0.217891\\\" color=\\\"#77040f\\\" label=\\\"0.2179\\\"/><sld:ColorMapEntry quantity=\\\"0.222912\\\" color=\\\"#6f020e\\\" label=\\\"0.2229\\\"/><sld:ColorMapEntry quantity=\\\"0.227932\\\" color=\\\"#67000d\\\" label=\\\"0.2279\\\"/></sld:ColorMap></sld:RasterSymbolizer></sld:Rule></sld:FeatureTypeStyle></sld:UserStyle></UserLayer></StyledLayerDescriptor>\",\n    \"zoom_levels\": \"0-13\"\n  },\n  \"bahrain_mbsp.tif\": {\n    \"visualization\": true,\n    \"sld\": \"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?><StyledLayerDescriptor xmlns=\\\"http://www.opengis.net/sld\\\" xmlns:sld=\\\"http://www.opengis.net/sld\\\" xmlns:gml=\\\"http://www.opengis.net/gml\\\" xmlns:ogc=\\\"http://www.opengis.net/ogc\\\" version=\\\"1.0.0\\\"><UserLayer><sld:LayerFeatureConstraints><sld:FeatureTypeConstraint/></sld:LayerFeatureConstraints><sld:UserStyle><sld:Name>MBSP</sld:Name><sld:FeatureTypeStyle><sld:Rule><sld:RasterSymbolizer><sld:ChannelSelection><sld:GrayChannel><sld:SourceChannelName>1</sld:SourceChannelName></sld:GrayChannel></sld:ChannelSelection><sld:ColorMap type=\\\"ramp\\\"><sld:ColorMapEntry quantity=\\\"-0.455098\\\" color=\\\"#fff5f0\\\" label=\\\"-0.4551\\\"/><sld:ColorMapEntry quantity=\\\"-0.450362\\\" color=\\\"#fff2ec\\\" label=\\\"-0.4504\\\"/><sld:ColorMapEntry quantity=\\\"-0.445627\\\" color=\\\"#fff0e8\\\" label=\\\"-0.4456\\\"/><sld:ColorMapEntry quantity=\\\"-0.440891\\\" color=\\\"#ffede5\\\" label=\\\"-0.4409\\\"/><sld:ColorMapEntry quantity=\\\"-0.436156\\\" color=\\\"#feeae1\\\" label=\\\"-0.4362\\\"/><sld:ColorMapEntry quantity=\\\"-0.431420\\\" color=\\\"#fee8dd\\\" label=\\\"-0.4314\\\"/><sld:ColorMapEntry quantity=\\\"-0.426685\\\" color=\\\"#fee5d9\\\" label=\\\"-0.4267\\\"/><sld:ColorMapEntry quantity=\\\"-0.421949\\\" color=\\\"#fee3d6\\\" label=\\\"-0.4219\\\"/><sld:ColorMapEntry quantity=\\\"-0.417214\\\" color=\\\"#fee0d2\\\" label=\\\"-0.4172\\\"/><sld:ColorMapEntry quantity=\\\"-0.412478\\\" color=\\\"#fedbcc\\\" label=\\\"-0.4125\\\"/><sld:ColorMapEntry quantity=\\\"-0.407743\\\" color=\\\"#fdd7c6\\\" label=\\\"-0.4077\\\"/><sld:ColorMapEntry quantity=\\\"-0.403007\\\" color=\\\"#fdd2bf\\\" label=\\\"-0.4030\\\"/><sld:ColorMapEntry quantity=\\\"-0.398272\\\" color=\\\"#fdcdb9\\\" label=\\\"-0.3983\\\"/><sld:ColorMapEntry quantity=\\\"-0.393536\\\" color=\\\"#fdc9b3\\\" label=\\\"-0.3935\\\"/><sld:ColorMapEntry quantity=\\\"-0.388801\\\" color=\\\"#fcc4ad\\\" label=\\\"-0.3888\\\"/><sld:ColorMapEntry quantity=\\\"-0.384065\\\" color=\\\"#fcbfa7\\\" label=\\\"-0.3841\\\"/><sld:ColorMapEntry quantity=\\\"-0.379330\\\" color=\\\"#fcb99f\\\" label=\\\"-0.3793\\\"/><sld:ColorMapEntry quantity=\\\"-0.374594\\\" color=\\\"#fcb499\\\" label=\\\"-0.3746\\\"/><sld:ColorMapEntry quantity=\\\"-0.369859\\\" color=\\\"#fcaf93\\\" label=\\\"-0.3699\\\"/><sld:ColorMapEntry quantity=\\\"-0.365123\\\" color=\\\"#fcaa8d\\\" label=\\\"-0.3651\\\"/><sld:ColorMapEntry quantity=\\\"-0.360388\\\" color=\\\"#fca588\\\" label=\\\"-0.3604\\\"/><sld:ColorMapEntry quantity=\\\"-0.355652\\\" color=\\\"#fca082\\\" label=\\\"-0.3557\\\"/><sld:ColorMapEntry quantity=\\\"-0.350917\\\" color=\\\"#fc9b7c\\\" label=\\\"-0.3509\\\"/><sld:ColorMapEntry quantity=\\\"-0.346181\\\" color=\\\"#fc9576\\\" label=\\\"-0.3462\\\"/><sld:ColorMapEntry quantity=\\\"-0.341446\\\" color=\\\"#fc9070\\\" label=\\\"-0.3414\\\"/><sld:ColorMapEntry quantity=\\\"-0.336710\\\" color=\\\"#fc8b6b\\\" label=\\\"-0.3367\\\"/><sld:ColorMapEntry quantity=\\\"-0.331975\\\" color=\\\"#fc8666\\\" label=\\\"-0.3320\\\"/><sld:ColorMapEntry quantity=\\\"-0.327239\\\" color=\\\"#fc8161\\\" label=\\\"-0.3272\\\"/><sld:ColorMapEntry quantity=\\\"-0.322504\\\" color=\\\"#fb7c5c\\\" label=\\\"-0.3225\\\"/><sld:ColorMapEntry quantity=\\\"-0.317768\\\" color=\\\"#fb7757\\\" label=\\\"-0.3178\\\"/><sld:ColorMapEntry quantity=\\\"-0.313033\\\" color=\\\"#fb7252\\\" label=\\\"-0.3130\\\"/><sld:ColorMapEntry quantity=\\\"-0.308297\\\" color=\\\"#fb6d4d\\\" label=\\\"-0.3083\\\"/><sld:ColorMapEntry quantity=\\\"-0.303562\\\" color=\\\"#fa6648\\\" label=\\\"-0.3036\\\"/><sld:ColorMapEntry quantity=\\\"-0.298826\\\" color=\\\"#f96044\\\" label=\\\"-0.2988\\\"/><sld:ColorMapEntry quantity=\\\"-0.294091\\\" color=\\\"#f75b40\\\" label=\\\"-0.2941\\\"/><sld:ColorMapEntry quantity=\\\"-0.289355\\\" color=\\\"#f6553c\\\" label=\\\"-0.2894\\\"/><sld:ColorMapEntry quantity=\\\"-0.284620\\\" color=\\\"#f44f39\\\" label=\\\"-0.2846\\\"/><sld:ColorMapEntry quantity=\\\"-0.279884\\\" color=\\\"#f34935\\\" label=\\\"-0.2799\\\"/><sld:ColorMapEntry quantity=\\\"-0.275149\\\" color=\\\"#f14331\\\" label=\\\"-0.2751\\\"/><sld:ColorMapEntry quantity=\\\"-0.270413\\\" color=\\\"#f03d2d\\\" label=\\\"-0.2704\\\"/><sld:ColorMapEntry quantity=\\\"-0.265678\\\" color=\\\"#ec382b\\\" label=\\\"-0.2657\\\"/><sld:ColorMapEntry quantity=\\\"-0.260942\\\" color=\\\"#e83429\\\" label=\\\"-0.2609\\\"/><sld:ColorMapEntry quantity=\\\"-0.256207\\\" color=\\\"#e32f27\\\" label=\\\"-0.2562\\\"/><sld:ColorMapEntry quantity=\\\"-0.251471\\\" color=\\\"#de2b25\\\" label=\\\"-0.2515\\\"/><sld:ColorMapEntry quantity=\\\"-0.246736\\\" color=\\\"#da2723\\\" label=\\\"-0.2467\\\"/><sld:ColorMapEntry quantity=\\\"-0.242000\\\" color=\\\"#d52221\\\" label=\\\"-0.2420\\\"/><sld:ColorMapEntry quantity=\\\"-0.237265\\\" color=\\\"#d11e1f\\\" label=\\\"-0.2373\\\"/><sld:ColorMapEntry quantity=\\\"-0.232529\\\" color=\\\"#cc191e\\\" label=\\\"-0.2325\\\"/><sld:ColorMapEntry quantity=\\\"-0.227794\\\" color=\\\"#c7171c\\\" label=\\\"-0.2278\\\"/><sld:ColorMapEntry quantity=\\\"-0.223058\\\" color=\\\"#c2161b\\\" label=\\\"-0.2231\\\"/><sld:ColorMapEntry quantity=\\\"-0.218323\\\" color=\\\"#bd151a\\\" label=\\\"-0.2183\\\"/><sld:ColorMapEntry quantity=\\\"-0.213587\\\" color=\\\"#b81419\\\" label=\\\"-0.2136\\\"/><sld:ColorMapEntry quantity=\\\"-0.208852\\\" color=\\\"#b31218\\\" label=\\\"-0.2089\\\"/><sld:ColorMapEntry quantity=\\\"-0.204116\\\" color=\\\"#af1117\\\" label=\\\"-0.2041\\\"/><sld:ColorMapEntry quantity=\\\"-0.199381\\\" color=\\\"#aa1016\\\" label=\\\"-0.1994\\\"/><sld:ColorMapEntry quantity=\\\"-0.194645\\\" color=\\\"#a50f15\\\" label=\\\"-0.1946\\\"/><sld:ColorMapEntry quantity=\\\"-0.189910\\\" color=\\\"#9d0d14\\\" label=\\\"-0.1899\\\"/><sld:ColorMapEntry quantity=\\\"-0.185174\\\" color=\\\"#960b13\\\" label=\\\"-0.1852\\\"/><sld:ColorMapEntry quantity=\\\"-0.180439\\\" color=\\\"#8e0912\\\" label=\\\"-0.1804\\\"/><sld:ColorMapEntry quantity=\\\"-0.175703\\\" color=\\\"#860811\\\" label=\\\"-0.1757\\\"/><sld:ColorMapEntry quantity=\\\"-0.170968\\\" color=\\\"#7e0610\\\" label=\\\"-0.1710\\\"/><sld:ColorMapEntry quantity=\\\"-0.166232\\\" color=\\\"#77040f\\\" label=\\\"-0.1662\\\"/><sld:ColorMapEntry quantity=\\\"-0.161497\\\" color=\\\"#6f020e\\\" label=\\\"-0.1615\\\"/><sld:ColorMapEntry quantity=\\\"-0.156761\\\" color=\\\"#67000d\\\" label=\\\"-0.1568\\\"/></sld:ColorMap></sld:RasterSymbolizer></sld:Rule></sld:FeatureTypeStyle></sld:UserStyle></UserLayer></StyledLayerDescriptor>\",\n    \"zoom_levels\": \"0-13\"\n  },\n  \"hardware_usage.json\": {\n    \"visualization\": false,\n    \"s3_url\": \"s3://rasid-gopilotv1-storage/assets/user_aysh-813-review/session_aysh813-cfe66f502bfb4ce2843e6e7ba223b9ce/meta/hardware_usage.json\",\n    \"download_url\": \"signed-link-removed\"\n  }\n}\n```"}
